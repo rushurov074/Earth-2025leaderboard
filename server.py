@@ -1,8 +1,10 @@
 import json
 import os
 from flask import Flask, request, jsonify, send_from_directory, after_this_request
+from flask_cors import CORS  # <-- Add this import
 
 app = Flask(__name__)
+CORS(app)  # <-- This opens up your API so your GitHub Pages site can talk to it
 
 
 @app.after_request
